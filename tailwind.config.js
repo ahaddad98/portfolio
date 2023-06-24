@@ -12,7 +12,9 @@ module.exports = {
       myblue: '#4D5BCE',
       mygray: '#607B96',
       mygreen: 'rgba(67, 217, 173, 1)',
-      bordercolor: '#1E2D3D'
+      bordercolor: '#1E2D3D',
+      cardbg: '#011221',
+      cadrborder: '#1E2D3D',
     },
     extend: {
       backgroundImage: {

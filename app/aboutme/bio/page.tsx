@@ -1,4 +1,5 @@
 import React from "react";
+import CardSnippet from "./Card";
 
 const BioPage = () => {
     return <React.Fragment>
@@ -8,7 +9,7 @@ const BioPage = () => {
                 <a>x</a>
             </div>
             <div className="w-full divider divider-vertical m-0 mt-0 p-0 h-1"></div>
-            <div className="flex flex-1 overflow-y-scroll p-5 text-[17px] text-mygray">
+            <div className="flex flex-1 overflow-y-scroll p-5 text-[17px] text-mygray max-h-[660px]">
                 <pre>
                     1    /** <br />
                     2    * About me <br />
@@ -34,9 +35,11 @@ const BioPage = () => {
             <div className="h-[42px]">
             </div>
             <div className="w-full divider divider-vertical m-0 mt-0 p-0 h-1"></div>
-            <div className="flex flex-1 overflow-y-scroll p-5">
+            <div className="flex flex-1 overflow-y-scroll p-5 max-h-[650px]">
                 <div className="text-[17px] text-mygray">
                 // Code snippet showcase:
+                <CardSnippet />
+                <CardSnippet />
                 </div>
             </div>
         </div>

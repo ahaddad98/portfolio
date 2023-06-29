@@ -23,9 +23,21 @@ body {
   margin: 0;
   width: 100vw;
   height: 100vh;
-  padding: 50px;
+  padding: 20px;
   box-sizing: border-box;
   font-family: 'Fira Code', monospace;
+}
+
+@media screen and (max-width: 900px) {
+  body {
+    /* background: #010C15; */
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    padding: 10px;
+    box-sizing: border-box;
+    font-family: 'Fira Code', monospace;
+  }
 }
 
 * {
@@ -37,6 +49,25 @@ body {
   --tw-border-opacity: 1;
   --tw-text-opacity: 1;
 }
+
+.menu :where(li ul):before {
+  /* position: absolute;
+  left: 0px;
+  top: 0.75rem;
+  bottom: 0.75rem;
+  width: 1px;
+  background-color: hsl(var(--bc) / 0.1);
+  content: ""; */
+  display: none;
+}
+
+.menu :where(li ul) {
+  position: relative;
+  white-space: nowrap;
+  margin-left: 0rem;
+  padding-left: 0rem;
+}
+
 
 /* Hide the default scroll bar */
 ::-webkit-scrollbar {
@@ -65,3 +96,11 @@ body {
 /* ::-webkit-scrollbar-thumb:active {
   background-color: #334353;
 } */
+
+.card-project {
+  transition: transform 0.3s ease;
+}
+
+.card-project:hover {
+  transform: scale(1.05);
+}

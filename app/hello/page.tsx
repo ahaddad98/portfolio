@@ -34,7 +34,8 @@ const HelloPage = () => {
                 </span>
             </div>
         </div>
-        <div>
+        <div className="hidden lg:block">
+            {/* <PlayPage /> */}
             <Image src={'/ss.png'} alt="" width={500} height={500} />
         </div>
     </div>

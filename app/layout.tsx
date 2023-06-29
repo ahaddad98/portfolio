@@ -18,18 +18,14 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   const [tabName, setTabName] = useState('hello')
-  // const router = useRouter()
-  // useEffect(() => {
-  //   // if (!router.query)
-  //     // router.push('/hello')
-  // })
+ 
   return (
     <html lang="en">
       <body className={inter.className}>
         <main className="h-full flex flex-col justify-between" style={{ background: '#011627', border: '1px solid #1E2D3D', borderRadius: '8px' }}>
-          <div className='flex w-full items-center justify-between tab-bordered'>
+          <div className=' hidden lg:flex w-full items-center justify-between tab-bordered'>
             <div className="tabs  flex" >
-              <Link href={'/amine-haddad'} className={`tab h-[50px]  ${tabName === 'me' ? 'tab-active  tab-bordered  border-myorange' : ''} `} onClick={() => { setTabName('me') }}>amine-haddad</Link>
+              <div className={`tab h-[50px]  ${tabName === 'me' ? 'tab-active  tab-bordered  border-myorange' : ''} `}>amine-haddad</div>
               <div className="divider lg:divider-horizontal m-0"></div>
               <Link href={'/hello'} className={`tab h-[50px]  ${tabName === 'hello' ? 'tab-active tab-bordered border-myorange' : ''} `} onClick={() => setTabName('hello')}>_hello</Link>
               <div className="divider lg:divider-horizontal"></div>

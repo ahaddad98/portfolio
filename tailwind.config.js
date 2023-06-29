@@ -15,6 +15,14 @@ module.exports = {
       bordercolor: '#1E2D3D',
       cardbg: '#011221',
       cadrborder: '#1E2D3D',
+      // cardprojcol: '#01122',
+    },
+    screens: {
+      'sm': '640px',
+      'md': '900px',
+      'lg': '1024px',
+      'xl': '1280px',
+      '2xl': '1536px',
     },
     extend: {
       backgroundImage: {

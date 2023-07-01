@@ -12,7 +12,7 @@ export default function Home() {
   // router.push('/hello')
   return (
     <div>
-      Loaind ...
+      Loading ...
     </div>
   )
 }

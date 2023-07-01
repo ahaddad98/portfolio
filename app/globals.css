@@ -28,6 +28,11 @@ body {
   font-family: 'Fira Code', monospace;
 }
 
+* {
+  box-sizing: border-box;
+
+}
+
 @media screen and (max-width: 900px) {
   body {
     /* background: #010C15; */
@@ -103,4 +108,15 @@ body {
 
 .card-project:hover {
   transform: scale(1.05);
+}
+
+@media screen and (min-width: 1280px) {
+  .toOver{
+    max-height: calc(100% - 42px);
+  }
+}
+@media screen and (max-width: 1280px) {
+  .toOver{
+    max-height: fit-content;
+  }
 }

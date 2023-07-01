@@ -18,12 +18,74 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   const [tabName, setTabName] = useState('hello')
- 
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
     <html lang="en">
       <body className={inter.className}>
-        <main className="h-full flex flex-col justify-between" style={{ background: '#011627', border: '1px solid #1E2D3D', borderRadius: '8px' }}>
-          <div className=' hidden lg:flex w-full items-center justify-between tab-bordered'>
+        <main className="h-full flex flex-col justify-between relative" style={{ background: '#011627', border: '1px solid #1E2D3D', borderRadius: '8px', maxHeight: 'calc(100%)' }}>
+          <div className='lg:hidden absolute w-full flex flex-col z-50'>
+            <div className="menu-button w-full flex items-center justify-between px-4 bg-cardbg">
+              <div className={`tab h-[50px]  ${tabName === 'me' ? 'tab-active  tab-bordered  border-myorange' : ''} `}>amine-haddad</div>
+              <label className="btn btn-circle swap swap-rotate bg-transparent border-none">
+                <input type="checkbox" onChange={toggleMenu} />
+                <svg className="swap-off fill-current" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 512 512"><path d="M64,384H448V341.33H64Zm0-106.67H448V234.67H64ZM64,128v42.67H448V128Z" /></svg>
+                <svg className="swap-on fill-current" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 512 512"><polygon points="400 145.49 366.51 112 256 222.51 145.49 112 112 145.49 222.51 256 112 366.51 145.49 400 256 289.49 366.51 400 400 366.51 289.49 256 400 145.49" /></svg>
+              </label>
+            </div>
+          </div>
+          {isMenuOpen && (
+            <div className="lg:hidden absolute w-full h-full flex flex-col z-20 pt-12">
+              <div className="w-full menu flex flex-1 flex-col bg-cardbg items-center justify-center gap-3">
+                <div className={`menu-item ${tabName === 'hello' ? 'active' : ''}`}>
+                  <Link href={'/hello'} onClick={() => {
+                    setIsMenuOpen(!isMenuOpen);
+                    setTabName('hello')
+                  }}>
+                    _hello
+                  </Link>
+                </div>
+                <div className="divider lg:divider-horizontal m-0"></div>
+
+                <div className={`menu-item ${tabName === 'about' ? 'active' : ''}`}>
+                  <Link href={'/aboutme'} onClick={() => {
+                    setIsMenuOpen(!isMenuOpen);
+                    setTabName('about')
+
+                  }
+                  }>
+                    _about-me
+                  </Link>
+                </div>
+                <div className="divider lg:divider-horizontal m-0"></div>
+                <div
+                  className={`menu-item ${tabName === 'projects' ? 'active' : ''}`}
+                >
+                  <Link href={'/projects'} onClick={() => {
+                    setIsMenuOpen(!isMenuOpen);
+                    setTabName('projects')
+                  }}>
+                    _projects
+                  </Link>
+                </div>
+                <div className="divider lg:divider-horizontal m-0"></div>
+                <div className={`menu-item ${tabName === 'contact' ? 'active' : ''}`}>
+                  <Link href={'/contactme'} onClick={() => {
+                    setIsMenuOpen(!isMenuOpen);
+                    setTabName('contact')
+                  }}>
+                    _contact-me
+                  </Link>
+                </div>
+                <div className="divider lg:divider-horizontal m-0"></div>
+              </div>
+            </div>
+          )}
+          <div className='hidden lg:flex w-full items-center justify-between tab-bordered'>
             <div className="tabs  flex" >
               <div className={`tab h-[50px]  ${tabName === 'me' ? 'tab-active  tab-bordered  border-myorange' : ''} `}>amine-haddad</div>
               <div className="divider lg:divider-horizontal m-0"></div>

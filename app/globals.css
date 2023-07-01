@@ -42,6 +42,7 @@ body {
     padding: 10px;
     box-sizing: border-box;
     font-family: 'Fira Code', monospace;
+    overflow: hidden;
   }
 }
 

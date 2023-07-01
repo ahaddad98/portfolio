@@ -48,7 +48,7 @@ const items = [<div className="form-control">
 const SideBar = () => {
     return <React.Fragment>
         <div h-full>
-            <ul className="h-full menu bg-base-200 w-56 rounded-box bg-transparent p-0">
+            <ul className="xl:h-full menu bg-base-200 w-56 rounded-box bg-transparent p-0">
                 <li className="">
                     <details open>
                         <summary>projects</summary>

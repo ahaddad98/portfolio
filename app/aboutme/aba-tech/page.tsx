@@ -3,20 +3,12 @@ import React from "react";
 import { DEFAULT_MIN_VERSION } from "tls";
 import CardSnippet from "../bio/Card";
 
-const HighSchool = () => {
-    const Arr = [
-        "",
-        "In 2016, I completed my Baccalaureate in Physics at Almouahidine High School.",
-        "This educational milestone provided me with a strong foundation in physics principles and concepts.",
-        "The program equipped me with essential analytical and problem-solving skills,",
-        "I gained valuable research experience and a solid foundation for pursuing careers in areas such as research,",
-        "setting the stage for further studies and career opportunities in the field of physics.",
-        ""
-    ]
+const SoftwareSchool = () => {
+
     return <React.Fragment>
         <div className="h-full flex-1 flex flex-col">
             <div className="hidden xl:flex h-[42px] w-[200px]  items-center justify-between pl-3 pr-3 border-r-2 border-r-bordercolor">
-                <a>High School</a>
+                <a>Aba-technology</a>
                 <a>x</a>
             </div>
             <div className="w-full divider divider-vertical m-0 mt-0 p-0 h-1"></div>
@@ -24,21 +16,16 @@ const HighSchool = () => {
                 <span className="block xl:hidden text-mywhite">
                     // personal-info / bio
                 </span>
-                <code>
-                    {
-                        Arr.map((el: any, key: number) => {
-                            return <div className="flex gap-10" key={key}>
-                                <span className="hidden xl:block">
-                                    {key + 1}
-                                </span>
-                                <div>
-                                    {key === 0 && key !== Arr.length - 1 ? '/**  ' + el : '*   ' + el}
-                                    {key === Arr.length - 1 && '**/'}
-                                </div>
-                            </div>
-                        })
-                    }
-                </code>
+                <div className="p-4 rounded-lg shadow">
+                    <p className="mb-4">Front-End & Mobile App Developer, (May 2022 - June 2023)</p>
+                    <ul className="list-disc pl-6 mb-4">
+                        <li>Worked on more than 10 IoT projects for Mediot and Digieye companies using React.js and mobile applications using Flutter.</li>
+                        <li>Collaborated with cross-functional teams, including designers and back-end developers, to deliver high-quality products that met clients' needs.</li>
+                        <li>Developed responsive and user-friendly UI components, features, and modules that improved the overall usability and user experience of the applications.</li>
+                        <li>Contributed to the optimization and maintenance of existing applications, ensuring their continued performance and reliability.</li>
+                        <li>Actively participated in code reviews, providing constructive feedback and implementing changes to improve code quality and maintainability.</li>
+                    </ul>
+                </div>
             </div>
         </div>
         <div className="divider divider-horizontal m-0  p-0 w-1"></div>
@@ -57,4 +44,4 @@ const HighSchool = () => {
         </div>
     </React.Fragment>
 }
-export default HighSchool
+export default SoftwareSchool

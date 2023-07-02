@@ -3,20 +3,20 @@ import React from "react";
 import { DEFAULT_MIN_VERSION } from "tls";
 import CardSnippet from "../bio/Card";
 
-const HighSchool = () => {
+const SoftwareSchool = () => {
     const Arr = [
         "",
-        "In 2016, I completed my Baccalaureate in Physics at Almouahidine High School.",
-        "This educational milestone provided me with a strong foundation in physics principles and concepts.",
-        "The program equipped me with essential analytical and problem-solving skills,",
-        "I gained valuable research experience and a solid foundation for pursuing careers in areas such as research,",
-        "setting the stage for further studies and career opportunities in the field of physics.",
+        "Since 2019, I have been a student at 1337 school in Khouribga, part of the renowned 42 network.",
+        "Currently, I am at level 16 in the program.",
+        "My studies at 1337 school have provided me with a comprehensive education in IT and programming.",
+        "I am now actively seeking to pursue a senior IT architect diploma,",
+        "which will further enhance my skills and knowledge in designing and implementing complex IT systems.",
         ""
     ]
     return <React.Fragment>
         <div className="h-full flex-1 flex flex-col">
             <div className="hidden xl:flex h-[42px] w-[200px]  items-center justify-between pl-3 pr-3 border-r-2 border-r-bordercolor">
-                <a>High School</a>
+                <a>1337 School</a>
                 <a>x</a>
             </div>
             <div className="w-full divider divider-vertical m-0 mt-0 p-0 h-1"></div>
@@ -57,4 +57,4 @@ const HighSchool = () => {
         </div>
     </React.Fragment>
 }
-export default HighSchool
+export default SoftwareSchool

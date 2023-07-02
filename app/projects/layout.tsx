@@ -1,6 +1,5 @@
 import React from "react";
 import SideBar from "./sidebar";
-'use-client'
 const ContactMe = ({
     children,
 }: {

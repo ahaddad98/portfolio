@@ -6,28 +6,14 @@ import CardSnippet from "./Card";
 
 
 const BioPage = () => {
-    const codeString = `
-    const button = document.querySelector('#sendBtn');
-
-    const message = {
-        name: "Jonathan Davis",
-        email: "",
-        message: "",
-        date: "Thu 21 Apr"
-    }
-
-    button.addEventListener('click', () => {
-        form.send(message);
-    });
-`;
     return <React.Fragment>
         <div className="h-full flex-1 flex flex-col">
-            <div className="h-[42px] w-[200px] flex items-center justify-between pl-3 pr-3 border-r-2 border-r-bordercolor">
+            <div className="hidden h-[42px] w-[200px] xl:flex items-center justify-between pl-3 pr-3 border-r-2 border-r-bordercolor">
                 <a>Item 1</a>
                 <a>x</a>
             </div>
             <div className="w-full divider divider-vertical m-0 mt-0 p-0 h-1"></div>
-            <form className="flex flex-col flex-1 overflow-y-scroll p-5 text-[17px] text-mygray max-h-[660px] items-center justify-center gap-4">
+            <form className="flex flex-col flex-1 xl:overflow-y-scroll p-5 text-[17px] text-mygray max-h-[660px] items-center justify-center gap-4">
                 <div className="flex flex-col gap-1 w-full max-w-xs">
                     <span className="label-text">_name:</span>
                     <input type="text" placeholder="Type here" className="input border-2 border-bordercolor bg-cardbg  w-full max-w-xs" />
@@ -46,11 +32,11 @@ const BioPage = () => {
             </form>
         </div>
         <div className="divider divider-horizontal m-0  p-0 w-1"></div>
-        <div className="h-full flex-1 flex flex-col">
+        <div className="hidden  h-full flex-1 xl:flex flex-col">
             <div className="h-[42px]">
             </div>
             <div className="w-full divider divider-vertical m-0 mt-0 p-0 h-1"></div>
-            <div className="flex flex-1 overflow-y-scroll p-5 max-h-[650px]">
+            <div className="flex flex-1 xl:overflow-y-scroll p-5 max-h-full">
                 <div className="text-[17px] text-mygray">
                     <code>
                         const button = document.querySelector('#sendBtn');<br />

@@ -1,8 +1,8 @@
+'use client'
 import Image from "next/image";
 import React from "react";
-
 const HelloPage = () => {
-    return <div className="flex flex-1 items-center justify-center gap-[7rem] p-4">
+    return <div className="flex flex-1 items-center justify-center gap-[10rem] p-4">
         <div>
             <div className="sm:text-[18px]/[24px] text-[16px]/[20px] text-mywhite">
                 Hi all. I am
@@ -11,7 +11,7 @@ const HelloPage = () => {
                 Amine Haddad
             </div>
             <div className="sm:text-[25px]/[40px] text-[19px]/[30px] text-myblue">
-                {'>'} Front-end developer
+                {'>'} Front-end & Mobile developer
             </div>
             <div className="mt-[30px] sm:text-[16px]/[25px] text-[16px]/[20px] text-mygray">
             // complete the game to continue
@@ -19,7 +19,10 @@ const HelloPage = () => {
             <div className="sm:text-[16px]/[25px] text-[16px]/[20px] text-mygray">
             // you can also see it on my Github page
             </div>
-            <div className="text-[16px]/[30px] text-myblue flex gap-2 flex-wrap">
+            <div className="text-[16px]/[30px] text-myblue flex gap-2 flex-wrap cursor-pointer" onClick={() => {
+                    // window.location.href = 'https://github.com/ahaddad98'
+                    window.open('https://github.com/ahaddad98', '_blank');
+                }}>
                 <span style={{color: 'rgba(77, 91, 206, 1)'}}>
                     const
                 </span>
@@ -29,14 +32,14 @@ const HelloPage = () => {
                 <span className="text-mywhite">
                     =
                 </span>
-                <span style={{color: 'rgba(233, 146, 135, 1)'}}>
+                <div className="cursur-pointer" style={{color: 'rgba(233, 146, 135, 1)'}}>
                     “https://github.com/example/url”
-                </span>
+                </div>
             </div>
         </div>
-        <div className="hidden lg:block">
+        <div className="hidden lg:block rounded-full">
             {/* <PlayPage /> */}
-            <Image src={'/ss.png'} alt="" width={500} height={500} />
+            <Image src={'/mee.jpg'} alt="" width={300} height={200} className="rounded-full"/>
         </div>
     </div>
 }

@@ -12,6 +12,7 @@ const SideBar = () => {
                     <details >
                         <summary>education</summary>
                         <ul>
+                            <li className=""><Link href={'/aboutme/1337school'}>1337 School</Link></li>
                             <li className=""><Link href={'/aboutme/high-school'}>high-school</Link></li>
                             <li className=""><Link href={'/aboutme/university'}>university</Link></li>
                         </ul>
@@ -20,10 +21,10 @@ const SideBar = () => {
                 <div className="divider divider-vertical m-0 mt-0 p-0"></div>
                 <li className="">
                     <details >
-                        <summary>contacts</summary>
+                        <summary>Experiences</summary>
                         <ul>
-                            <li className=""><Link href={''}>amine.haddadd@gmail.com</Link></li>
-                            <li className=""><Link href={''}>+212629153914</Link></li>
+                            <li className=""><Link href={'/aboutme/aba-tech'}>Aba-technology</Link></li>
+                            {/* <li className=""><Link href={''}>+212629153914</Link></li> */}
                         </ul>
                     </details>
                 </li>

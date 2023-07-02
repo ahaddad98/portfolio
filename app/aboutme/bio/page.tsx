@@ -6,24 +6,19 @@ const BioPage = () => {
     const Arr = [
         "",
         "About me",
-        "I have 5 years of еxperience in web",
-        "development lorem ipsum dolor sit amet,",
-        "consectetur adipiscing elit, sed do eiusmod",
-        "tempor incididunt ut labore et dolore",
-        "magna aliqua. Ut enim ad minim veniam,",
-        "quis nostrud exercitation ullamco laboris",
-        "nisi ut aliquip ex ea commodo consequat.",
-        "Duis aute irure dolor in reprehenderit in",
-        "Duis aute irure dolor in reprehenderit in ",
-        "voluptate velit esse cillum dolore eu fugiat",
-        "nulla pariatur. Excepteur sint occaecat",
-        "officia deserunt mollit anim id est laborum.",
+        "Highly skilled Front-end Web and Mobile Developer with 2+ years of experience",
+        "creating visually stunning and user-friendly digital solutions.",
+        "Proven track record of delivering high-quality projects on time and within budget.",
+        "Passionate about staying up-to-date with the latest technologies and trends.",
+        "Strong problem-solving, communication, and collaboration skills.",
+        "A team player who enjoys working with others to exceed client expectations.",
+        "Looking for new and challenging projects to continue my career as a Web & Mobile Developer.",
         ""
     ]
     return <React.Fragment>
         <div className="h-full flex-1 flex flex-col">
             <div className="hidden xl:flex h-[42px] w-[200px]  items-center justify-between pl-3 pr-3 border-r-2 border-r-bordercolor">
-                <a>Item 1</a>
+                <a>Bio</a>
                 <a>x</a>
             </div>
             <div className="w-full divider divider-vertical m-0 mt-0 p-0 h-1"></div>
@@ -39,7 +34,7 @@ const BioPage = () => {
                                     {key + 1}
                                 </span>
                                 <div>
-                                    {key === 0  && key !== Arr.length - 1  ? '/**  ' + el :  '*   ' + el}
+                                    {key === 0 && key !== Arr.length - 1 ? '/**  ' + el : '*   ' + el}
                                     {key === Arr.length - 1 && '**/'}
                                 </div>
                             </div>

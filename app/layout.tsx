@@ -25,7 +25,7 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en">
+    <html lang="en"  data-theme="cupcake">
       <body className={inter.className}>
         <main className="h-full flex flex-col justify-between relative" style={{ background: '#011627', border: '1px solid #1E2D3D', borderRadius: '8px', maxHeight: 'calc(100%)' }}>
           <div className='lg:hidden absolute w-full flex flex-col z-50'>

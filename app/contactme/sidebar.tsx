@@ -4,7 +4,7 @@ import React from "react";
 const SideBar = () => {
     return <React.Fragment>
         <div h-full>
-            <ul className="h-full menu bg-base-200 w-56 rounded-box bg-transparent p-0">
+            <ul className="mt-14 m-2 lg:mt-0 lg:m-0 xl:h-full menu bg-base-200 w-full  xl:w-56 rounded-box bg-transparent p-0">
                 <li className="">
                     <details open>
                         <summary>education</summary>

@@ -11,24 +11,24 @@ const Projects = () => {
             <div className="w-full divider divider-vertical m-0 mt-0 p-0 h-1"></div>
             <div className="w-full toOver flex flex-1 max-h-full">
                 <div className="mt-4 w-full flex flex-row flex-wrap items-start justify-center gap-4 text-[17px] text-mygray overflow-hidden xl:overflow-y-scroll p-5">
-                    <CardProject />
-                    <CardProject />
-                    <CardProject />
-                    <CardProject />
-                    <CardProject />
-                    <CardProject />
-                    <CardProject />
-                    <CardProject />
-                    <CardProject />
-                    <CardProject />
-                    <CardProject />
-                    <CardProject />
-                    <CardProject />
-                    <CardProject />
-                    <CardProject />
-                    <CardProject />
-                    <CardProject />
-                    <CardProject />
+                    <CardProject linkto={'https://github.com/ahaddad98/portfolio'} title={'portfolio'} />
+                    <CardProject linkto={''} title={''} />
+                    <CardProject linkto={''} title={''} />
+                    <CardProject linkto={''} title={''} />
+                    <CardProject linkto={''} title={''} />
+                    <CardProject linkto={''} title={''} />
+                    <CardProject linkto={''} title={''} />
+                    <CardProject linkto={''} title={''} />
+                    <CardProject linkto={''} title={''} />
+                    <CardProject linkto={''} title={''} />
+                    <CardProject linkto={''} title={''} />
+                    <CardProject linkto={''} title={''} />
+                    <CardProject linkto={''} title={''} />
+                    <CardProject linkto={''} title={''} />
+                    <CardProject linkto={''} title={''} />
+                    <CardProject linkto={''} title={''} />
+                    <CardProject linkto={''} title={''} />
+                    <CardProject linkto={''} title={''} />
                 </div>
             </div>
         </div>

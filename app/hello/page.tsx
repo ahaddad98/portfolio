@@ -1,6 +1,8 @@
 'use client'
 import Image from "next/image";
 import React from "react";
+import HomeGame from "./room/page";
+import { AppCtx, SocketContext } from "./Context/SocketContext";
 const HelloPage = () => {
     return <div className="flex flex-1 items-center justify-center gap-[10rem] p-4">
         <div>
@@ -20,26 +22,29 @@ const HelloPage = () => {
             // you can also see it on my Github page
             </div>
             <div className="text-[16px]/[30px] text-myblue flex gap-2 flex-wrap cursor-pointer" onClick={() => {
-                    // window.location.href = 'https://github.com/ahaddad98'
-                    window.open('https://github.com/ahaddad98', '_blank');
-                }}>
-                <span style={{color: 'rgba(77, 91, 206, 1)'}}>
+                // window.location.href = 'https://github.com/ahaddad98'
+                window.open('https://github.com/ahaddad98', '_blank');
+            }}>
+                <span style={{ color: 'rgba(77, 91, 206, 1)' }}>
                     const
                 </span>
-                <span style={{color: 'rgba(67, 217, 173, 1)'}}>
+                <span style={{ color: 'rgba(67, 217, 173, 1)' }}>
                     githubLink
                 </span>
                 <span className="text-mywhite">
                     =
                 </span>
-                <div className="cursur-pointer" style={{color: 'rgba(233, 146, 135, 1)'}}>
+                <div className="cursur-pointer" style={{ color: 'rgba(233, 146, 135, 1)' }}>
                     “https://github.com/example/url”
                 </div>
             </div>
         </div>
         <div className="hidden lg:block rounded-full">
+            <SocketContext>
+                <HomeGame />
+            </SocketContext>
             {/* <PlayPage /> */}
-            <Image src={'/mee.jpg'} alt="" width={300} height={200} className="rounded-full"/>
+            {/* <Image src={'/ss.jpg'} alt="" width={300} height={200} className="rounded-full"/> */}
         </div>
     </div>
 }

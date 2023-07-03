@@ -39,14 +39,14 @@ const Game = (props: any) => {
   return (
     <>
       <Ball ref={ball} />
-      {/* <Stage
+      <Stage
         ref={{
           refBottom: cornerBottom,
           refTop: cornerTop,
           refLeft: cornerLeft,
           refRight: cornerRight,
         }}
-      /> */}
+      />
       {/* Player 1 */}
       <Padlle
         position={[0, -60 / 2 + 3, 0]}

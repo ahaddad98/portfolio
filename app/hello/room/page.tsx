@@ -56,7 +56,7 @@ const HomeGame: NextPage = () => {
           />
           {/* <axesHelper args={[200, 200, 200]} /> */}
           <ambientLight intensity={0.8} color={"white"} />
-          <Game  gameData={context.gameData} />
+          <Game  gameData={context?.gameData} />
         </Canvas>
       </div>
     </>

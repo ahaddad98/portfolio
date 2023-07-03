@@ -7,10 +7,20 @@ const SideBar = () => {
             <ul className="mt-14 m-2 lg:mt-0 lg:m-0 xl:h-full menu bg-base-200 w-full  xl:w-56 rounded-box bg-transparent p-0">
                 <li className="">
                     <details open>
-                        <summary>education</summary>
+                        <summary>Contact</summary>
                         <ul>
-                            <li className=""><Link href={'/contactme/mailpart'}>high-school</Link></li>
-                            <li className=""><Link href={'/contactme/mailpart'}>university</Link></li>
+                            <li className=""><div>amine.haddadd@gmail.com</div></li>
+                            <li className=""><div>+212629153814</div></li>
+                        </ul>
+                    </details>
+                </li>
+                <li className="">
+                    <details open>
+                        <summary>find-me-also-in</summary>
+                        <ul>
+                            <li className=""><div>Linkedin</div></li>
+                            <li className=""><div>Discord</div></li>
+                            <li className=""><div>Telegram</div></li>
                         </ul>
                     </details>
                 </li>

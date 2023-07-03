@@ -121,9 +121,9 @@ const SideBar = () => {
         <label className="label cursor-pointer flex gap-4">
             <input type="checkbox" onChange={() => {
                 if (!isc)
-                    addStringToArray('isc')
+                    addStringToArray('c')
                 else
-                    removeStringFromArray('isc')
+                    removeStringFromArray('c')
                 setIsc(!isc)
             }} checked={isc} className="checkbox" />
             <span className="label-text">C</span>

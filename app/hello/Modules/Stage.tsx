@@ -2,7 +2,7 @@ import { MeshPhysicalMaterial } from "three";
 import Padlle from "./Padlle";
 import React from "react";
 
-const Stage = React.forwardRef(({props, ref}: any) => {
+const Stage = React.forwardRef((props, ref: any) => {
   const material = new MeshPhysicalMaterial({
     color: "#C19A6B",
     emissive: 0x000000,

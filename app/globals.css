@@ -76,13 +76,18 @@ body {
 
 
 :root {
-  --scrollbar-track-color: #1E2D3D; /* Dark mode track color */
-  --scrollbar-thumb-color: #1E2D3D; /* Dark mode thumb color */
+  --scrollbar-track-color: #1E2D3D;
+  /* Dark mode track color */
+  --scrollbar-thumb-color: #1E2D3D;
+  /* Dark mode thumb color */
 }
+
 @media (prefers-color-scheme: light) {
   :root {
-    --scrollbar-track-color: #f2f2f2; /* Light mode track color */
-    --scrollbar-thumb-color: #ccc; /* Light mode thumb color */
+    --scrollbar-track-color: #f2f2f2;
+    /* Light mode track color */
+    --scrollbar-thumb-color: #ccc;
+    /* Light mode thumb color */
   }
 }
 
@@ -136,12 +141,34 @@ body::-webkit-scrollbar-thumb {
 }
 
 @media screen and (min-width: 1280px) {
-  .toOver{
+  .toOver {
     max-height: calc(100% - 42px);
   }
 }
+
 @media screen and (max-width: 1280px) {
-  .toOver{
+  .toOver {
     max-height: fit-content;
   }
+}
+
+
+.swiper-button-next {
+  display: none !important;
+}
+
+.swiper-button-prev {
+  display: none !important;
+}
+
+.swiper-horizontal>.swiper-scrollbar,
+.swiper-scrollbar.swiper-scrollbar-horizontal {
+  display: none !important;
+}
+
+svg {
+  display: block;
+  vertical-align: middle;
+  width: 38px;
+  height: 38px;
 }

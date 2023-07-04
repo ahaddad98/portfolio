@@ -1,9 +1,14 @@
+'use client'
 import React from "react";
 // import CardSnippet from "./Card";
 import { DEFAULT_MIN_VERSION } from "tls";
 import CardSnippet from "../bio/Card";
+import { useMyGlobalContext } from "@/app/ContextGlobalProvider";
+
 
 const University = () => {
+    let { theme }: any = useMyGlobalContext()
+
     const Arr = [
         "",
         "In 2020, I graduated with a Bachelor's degree in Applied Mathematics from Sultan Moulay Slimane University.",
@@ -15,7 +20,7 @@ const University = () => {
     ]
     return <React.Fragment>
         <div className="h-full flex-1 flex flex-col">
-            <div className="hidden xl:flex h-[42px] w-[200px]  items-center justify-between pl-3 pr-3 border-r-2 border-r-bordercolor">
+            <div className={`hidden xl:flex h-[42px] w-[200px]  items-center justify-between pl-3 pr-3 border-r-2 ${theme ? 'border-r-bordercolor' : 'border-r-mywhite'}`}>
                 <a>University</a>
                 <a>x</a>
             </div>

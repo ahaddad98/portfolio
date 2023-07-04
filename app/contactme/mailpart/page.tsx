@@ -1,11 +1,19 @@
 'use client'
 import React, { useRef, useState } from "react";
 import emailjs from '@emailjs/browser';
+import { useMyGlobalContext } from "@/app/ContextGlobalProvider";
 
 
 const BioPage = () => {
+    let { theme }: any = useMyGlobalContext()
     const [isSendSucces, setIsSendSucces] = useState(false);
+    const [nametText, setNameText] = useState('');
+    const [emailText, setEmailText] = useState('');
+    const [messageText, setMaessageText] = useState('');
     const formRef = useRef<any>();
+    const date = new Date();
+    const options: any = { weekday: 'short', day: '2-digit', month: 'short' };
+    const formattedDate = date.toLocaleString('en-US', options);
     const sendEmail = (e: any) => {
         e.preventDefault();
         console.log(e);
@@ -19,12 +27,12 @@ const BioPage = () => {
     };
     return <React.Fragment>
         <div className="h-full flex-1 flex flex-col">
-            <div className="hidden h-[42px] w-[200px] xl:flex items-center justify-between pl-3 pr-3 border-r-2 border-r-bordercolor">
+            <div className={`hidden h-[42px] w-[200px] xl:flex items-center justify-between pl-3 pr-3 border-r-2 ${theme ? 'border-r-bordercolor' : 'border-r-mywhite'}`}>
                 <a>Contact me</a>
                 <a>x</a>
             </div>
             <div className="w-full divider divider-vertical m-0 mt-0 p-0 h-1"></div>
-            {isSendSucces ? <div className="flex flex-col flex-1 xl:overflow-y-scroll p-5 text-[17px] text-mygray max-h-[660px] items-center justify-center gap-4">
+            {isSendSucces ? <div className="flex flex-col flex-1 h-full xl:overflow-y-scroll p-5 text-[17px] text-mygray max-h-full items-center justify-center gap-4">
                 <div>
                     Thank you! 🤘
                 </div>
@@ -33,18 +41,18 @@ const BioPage = () => {
                     You will recieve answer really soon!
                 </div>
                 <button className="btn btn-neutral max-w-xs" onClick={() => setIsSendSucces(false)}>send-new-message</button>
-            </div> : <form ref={formRef} onSubmit={(e: any) => { sendEmail(e) }} className="flex flex-col flex-1 xl:overflow-y-scroll p-5 text-[17px] text-mygray max-h-[660px] items-center justify-center gap-4">
+            </div> : <form ref={formRef} onSubmit={(e: any) => { sendEmail(e) }} className="flex flex-col flex-1 xl:overflow-y-scroll p-5 text-[17px] text-mygray max-h-full items-center justify-center gap-4">
                 <div className="flex flex-col gap-1 w-full max-w-xs">
                     <span className="label-text">_name:</span>
-                    <input type="text" name="user_name" placeholder="Type here" className="input border-2 border-bordercolor bg-cardbg  w-full max-w-xs" />
+                    <input onChange={(e: any) => setNameText(e.target.value)} type="text" name="user_name" placeholder="Type here" className={`input border-2 border-bordercolor  w-full max-w-xs ${theme ? 'bg-cardbg' : 'bg-mywhite'}`} />
                 </div>
                 <div className="flex flex-col gap-1 w-full max-w-xs">
                     <span className="label-text">_email:</span>
-                    <input name="user_email" type="text" placeholder="Type here" className="input border-2 border-bordercolor bg-cardbg  w-full max-w-xs" />
+                    <input onChange={(e: any) => setEmailText(e.target.value)} name="user_email" type="text" placeholder="Type here" className={`input border-2 border-bordercolor  w-full max-w-xs ${theme ? 'bg-cardbg' : 'bg-mywhite'}`} />
                 </div>
                 <div className="flex flex-col gap-1 w-full max-w-xs">
                     <span className="label-text">_message:</span>
-                    <textarea name="message" className="textarea textarea-ghost border-2 border-bordercolor bg-cardbg max-w-xs w-full" placeholder="Bio"></textarea>
+                    <textarea onChange={(e: any) => setMaessageText(e.target.value)} name="message" className={`textarea textarea-ghost border-2 border-bordercolor max-w-xs w-full ${theme ? 'bg-cardbg' : 'bg-mywhite'}`} placeholder="Bio"></textarea>
                 </div>
                 <div className="flex flex-col gap-1 w-full max-w-xs">
                     <button type="submit" className="btn btn-neutral w-full max-w-xs">submit-message</button>
@@ -62,19 +70,16 @@ const BioPage = () => {
                         const button = document.querySelector('#sendBtn');<br />
                         <br />
                         const message = &#123;<br />
-                        &nbsp;&nbsp;&nbsp;&nbsp;name: "Jonathan Davis",<br />
-                        &nbsp;&nbsp;&nbsp;&nbsp;email: "",<br />
-                        &nbsp;&nbsp;&nbsp;&nbsp;message: "",<br />
-                        &nbsp;&nbsp;&nbsp;&nbsp;date: "Thu 21 Apr"<br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;name: "{nametText}",<br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;email: "{emailText}",<br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;message: "{messageText}",<br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;date: "{formattedDate}"<br />
                         &#125;<br />
                         <br />
                         button.addEventListener('click', () ={'>'} &#123;<br />
                         &nbsp;&nbsp;&nbsp;&nbsp;form.send(message);<br />
                         &#125;);
                     </code>
-                    {/* <SyntaxHighlighter language="javascript" style={vs}>
-                        {codeString}
-                    </SyntaxHighlighter> */}
                 </div>
             </div>
         </div>

@@ -1,7 +1,10 @@
+'use client'
+import { useMyGlobalContext } from "@/app/ContextGlobalProvider";
 import Image from "next/image";
 import React from "react";
 
 const CardSnippet = () => {
+    let {theme}: any = useMyGlobalContext()
     return <div className="mt-10">
         <div className="mt-4 flex w-full items-center justify-between">
             <div className="flex items-center justify-start gap-4">
@@ -24,7 +27,7 @@ const CardSnippet = () => {
                 </div>
             </div>
         </div>
-        <div className="mt-4 rounded-lg p-4 border-[2px] border-cadrborder bg-cardbg">
+        <div className={`mt-4 rounded-lg p-4 border-[2px] border-cadrborder ${theme ? 'bg-cardbg' : 'bg-mywhite'}`}>
             <p>
                 {'function initializeModelChunk<T>(chunk: ResolvedModelChunk): T { const value: T = parseModel(chunk._response, chunk._value); const initializedChunk: InitializedChunk<T> = (chunk: any); initializedChunk._status = INITIALIZED; initializedChunk._value = value; return value; }'}
             </p>

@@ -15,9 +15,9 @@ const HelloPage = () => {
             <div className="sm:text-[25px]/[40px] text-[19px]/[30px] text-myblue">
                 {'>'} Front-end & Mobile developer
             </div>
-            <div className="mt-[30px] sm:text-[16px]/[25px] text-[16px]/[20px] text-mygray">
+            {/* <div className="mt-[30px] sm:text-[16px]/[25px] text-[16px]/[20px] text-mygray">
             // complete the game to continue
-            </div>
+            </div> */}
             <div className="sm:text-[16px]/[25px] text-[16px]/[20px] text-mygray">
             // you can also see it on my Github page
             </div>

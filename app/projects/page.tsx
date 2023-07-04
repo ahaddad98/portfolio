@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import CardProject from "./CardProject";
 import { useMyContext } from "./ContextProvider";
+import { useMyGlobalContext } from "../ContextGlobalProvider";
 
 const Projects = () => {
     const AllProjectList = [
@@ -13,10 +14,11 @@ const Projects = () => {
         }
     ]
     const [projectsList, setProjectList] = useState([])
+    let { theme }: any = useMyGlobalContext()
     let {data} : any = useMyContext()
     return <React.Fragment>
         <div className="w-full h-full max-h-full flex-1 flex flex-col">
-            <div className="hidden xl:flex h-[42px] w-[200px]  items-center justify-between pl-3 pr-3 border-r-2 border-r-bordercolor">
+            <div className={`hidden xl:flex h-[42px] w-[200px]  items-center justify-between pl-3 pr-3 border-r-2 ${theme ? 'border-r-bordercolor' : 'border-r-mywhite'}`}>
                 <a>Projects List</a>
                 <a>x</a>
             </div>

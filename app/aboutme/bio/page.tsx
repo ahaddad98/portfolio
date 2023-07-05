@@ -19,7 +19,7 @@ const BioPage = () => {
         ""
     ]
     return <React.Fragment>
-        <div className="h-full flex-1 flex flex-col">
+        <div className="h-full flex-1 flex flex-col xl:overflow-hidden">
             <div className={`hidden xl:flex h-[42px] w-[200px]  items-center justify-between pl-3 pr-3 border-r-2 ${theme ? 'border-r-bordercolor' : 'border-r-mywhite'}`}>
                 <a>Bio</a>
                 <a>x</a>

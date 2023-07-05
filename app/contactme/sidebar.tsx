@@ -1,3 +1,4 @@
+'use client'
 import Link from "next/link";
 import React from "react";
 
@@ -18,9 +19,9 @@ const SideBar = () => {
                     <details open>
                         <summary>find-me-also-in</summary>
                         <ul>
-                            <li className=""><div>Linkedin</div></li>
-                            <li className=""><div>Discord</div></li>
-                            <li className=""><div>Telegram</div></li>
+                            <li className="" onClick={() => window.open('https://www.linkedin.com/in/amine-haddad-/')}><div>Linkedin</div></li>
+                            <li className="" onClick={() => window.open('https://github.com/ahaddad98')}><div>Github</div></li>
+                            {/* <li className=""><div>Telegram</div></li> */}
                         </ul>
                     </details>
                 </li>

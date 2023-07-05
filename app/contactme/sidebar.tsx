@@ -11,7 +11,7 @@ const SideBar = () => {
                         <summary>Contact</summary>
                         <ul>
                             <li className=""><div>amine.haddadd@gmail.com</div></li>
-                            <li className=""><div>+212629153814</div></li>
+                            <li className=""><div>+212 629 153814</div></li>
                         </ul>
                     </details>
                 </li>

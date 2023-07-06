@@ -17,12 +17,12 @@ const Game = (props: any) => {
   const cornerBottom = useRef<any>();
   const cornerLeft = useRef<any>();
   const cornerRight = useRef<any>();
-  const { socket, gameData } = props;
+  const { socket, gameData, movepaddle } = props;
 
   let { left, right } = usePersonControls();
   let size = resize();
   useEffect(() => {
-    // if (left || right) socket.emit("padlleMove", { left, right });
+    movepaddle(left, right)
   }, [left, right]);
   useEffect(() => {
     if (size.width < 1000) camera.fov = 110;
@@ -33,7 +33,7 @@ const Game = (props: any) => {
   useFrame(({ gl, scene, camera }) => {
     ball.current.position.copy(gameData.ball);
     player.current.position.copy(gameData.player1);
-    player2.current.position.x = gameData.player1.x;
+    player2.current.position.x = gameData.ball.x;
     gl.render(scene, camera);
   }, 1);
   return (

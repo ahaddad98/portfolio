@@ -21,9 +21,47 @@ type GameDataType = {
 interface AppContextInterface {
   // socket: any | undefined;
   gameData: GameDataType;
+  movepaddle: (left: boolean, right: boolean) => void
 }
 export const AppCtx = createContext<AppContextInterface | null>(null);
-
+let dx = 1
+let dy = 1
+let player1 = {
+  position: { x: 0, y: -60 / 2 + 3, z: 0 },
+  size: 40 / 5,
+  height: 1.5,
+  width: 2,
+};
+let player2 = {
+  position: { x: 0, y: 60 / 2 - 3, z: 0 },
+  size: 40 / 5,
+  height: 1.5,
+  width: 2,
+}
+let ball = {
+  position: { x: 0, y: 0, z: 1 },
+  args: [1, 100, 100],
+};
+let stage = {
+  w: 40,
+  h: 60,
+  cLeft: {
+    position: [-40 / 2, 0, 0.75],
+    args: [1.5, 1.5, 61.5],
+  },
+  cRight: {
+    position: [40 / 2, 0, 0.75],
+    args: [1.5, 1.5, 61.5],
+  },
+  cTop: {
+    position: [0, -60 / 2, 0.75],
+    args: [1.5, 1.5, 40],
+  },
+  cBottom: {
+    position: [0, 60 / 2, 0.75],
+    args: [1.5, 1.5, 40],
+  },
+};
 // const socket = io("http://localhost:3001");
 export const SocketContext = ({ children }: any) => {
   const [gameData, setData] = useState<any>({
@@ -42,31 +80,69 @@ export const SocketContext = ({ children }: any) => {
       y: 60 / 2 - 3,
       z: 0,
     },
-    speed: 0.1,
     score: {
       player1: 0,
       player2: 0,
-    },
+
+    }
   });
-  // socket.on("joinRoom", (data) => {
-  //   alert("Match Found !");
-  //   console.log(data);
-  //   Router.push("/room/" + data.room);
-  // });
-  // useEffect(() => {
-  //   console.log("HEREE");
-  //   socket.on("gameData", (data: GameDataType) => {
-  //     console.log(data);
-  //     setData(data);
-  //   });
-  //   return () => {
-  //     socket.off("gameData");
-  //   };
-  // }, [gameData.ball]);
+
+  const movepaddle = (left: boolean, right: Boolean) => {
+    if (
+      gameData.player1.x +
+      player1.size / 2 +
+      Number(right) * 3 -
+      Number(left) * 3 <
+      stage.w / 2 &&
+      gameData.player1.x -
+      player1.size / 2 +
+      Number(right) * 3 -
+      Number(left) * 3 >
+      -stage.w / 2
+    )
+      gameData.player1.x +=
+        Number(right) * 3 - Number(left) * 3;
+  }
+  // const interval = setInterval(() => {
+  //   if (
+  //     gameData.ball.x + dx < -stage.w / 2 + stage.cLeft.args[1] ||
+  //     gameData.ball.x + dx > stage.w / 2 - stage.cRight.args[1]
+  //   )
+  //     dx *= -1;
+  //   if (
+  //     gameData.ball.y + dy - 0.5 == gameData.player2.y ||
+  //     (gameData.ball.y + dy - 0.5 == gameData.player1.y &&
+  //       gameData.ball.x + dx >=
+  //       gameData.player1.x - player1.size / 2 &&
+  //       gameData.ball.x + dx <=
+  //       gameData.player1.x + player1.size / 2)
+  //   )
+  //     dy *= -1;
+
+  //   if (
+  //     gameData.ball.y + dy < -stage.h / 2 ||
+  //     gameData.ball.y + dy > stage.h / 2
+  //   ) {
+  //     gameData.ball.y + dy < -stage.h / 2
+  //       ? gameData.score.player1++
+  //       : gameData.score.player2++;
+  //     gameData.ball = {
+  //       x: 3,
+  //       y: 3,
+  //       z: 1,
+  //     };
+  //   }
+
+  //   gameData.ball.x += 0.5 * dx;
+  //   gameData.ball.y += 0.5 * dy;
+  //   if (gameData.score.player1 === 5 || gameData.score.player2 === 5)
+  //     clearInterval(interval)
+  // }, 10);
   return (
     <AppCtx.Provider
       value={{
         gameData,
+        movepaddle
       }}
     >
       {children}

@@ -10,19 +10,7 @@ const HomeGame: NextPage = () => {
   const context: any = useContext(AppCtx);
   return (
     <>
-      {/* <div
-        style={{
-          color: "white",
-          position: "absolute",
-          fontWeight: "bold",
-          backgroundColor: "transparent",
-          cursor: "pointer",
-          zIndex: 999,
-        }}
-        // onClick={() => socket.emit("startGame")}
-      >
-        PLAY
-      </div>
+      {/* 
       <div
         style={{
           color: "white",
@@ -36,7 +24,7 @@ const HomeGame: NextPage = () => {
       >
         {context.gameData.score.player1} - {context.gameData.score.player2}
       </div> */}
-      <div className='' style={{width: '600px', height: '600px'}}>
+      <div className='flex flex-col items-center justify-center' style={{ width: '600px', height: '600px', position: 'relative' }}>
         <Canvas
           shadows={true}
           camera={{
@@ -51,13 +39,27 @@ const HomeGame: NextPage = () => {
             position={[0, 0, 20]}
             color={"white"}
             intensity={1}
-            // angle={20}
-            // distance={100}
           />
           {/* <axesHelper args={[200, 200, 200]} /> */}
           <ambientLight intensity={0.8} color={"white"} />
-          <Game  gameData={context?.gameData} />
+          <Game gameData={context?.gameData} movepaddle={context?.movepaddle} />
         </Canvas>
+        {/* <button type="submit" className="btn btn-neutral w-full max-w-xs"></button> */}
+        <button
+          className=" btn btn-neutral w-full max-w-[150px] items-center justify-center text-center"
+          style={{
+            // color: "white",
+            position: "absolute",
+            fontWeight: "bold",
+            // backgroundColor: "transparent",
+            cursor: "pointer",
+            zIndex: 999,
+            bottom: '20px',
+          }}
+        // onClick={() => socket.emit("startGame")}
+        >
+          PLAY
+        </button>
       </div>
     </>
   );

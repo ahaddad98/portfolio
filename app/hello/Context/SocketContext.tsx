@@ -21,7 +21,9 @@ type GameDataType = {
 interface AppContextInterface {
   // socket: any | undefined;
   gameData: GameDataType;
-  movepaddle: (left: boolean, right: boolean) => void
+  movepaddle: (left: boolean, right: boolean) => void;
+  play: boolean,
+  setPlay: any
 }
 export const AppCtx = createContext<AppContextInterface | null>(null);
 let dx = 1
@@ -103,46 +105,60 @@ export const SocketContext = ({ children }: any) => {
       gameData.player1.x +=
         Number(right) * 3 - Number(left) * 3;
   }
-  // const interval = setInterval(() => {
-  //   if (
-  //     gameData.ball.x + dx < -stage.w / 2 + stage.cLeft.args[1] ||
-  //     gameData.ball.x + dx > stage.w / 2 - stage.cRight.args[1]
-  //   )
-  //     dx *= -1;
-  //   if (
-  //     gameData.ball.y + dy - 0.5 == gameData.player2.y ||
-  //     (gameData.ball.y + dy - 0.5 == gameData.player1.y &&
-  //       gameData.ball.x + dx >=
-  //       gameData.player1.x - player1.size / 2 &&
-  //       gameData.ball.x + dx <=
-  //       gameData.player1.x + player1.size / 2)
-  //   )
-  //     dy *= -1;
+  const [play, setPlay] = useState(false)
+  useEffect(() => {
+    if (play) {
+      const interval = setInterval(() => {
+        const leftCollision =
+          gameData.ball.x + dx < -stage.w / 2 + stage.cLeft.args[1];
+        const rightCollision =
+          gameData.ball.x + dx > stage.w / 2 - stage.cRight.args[1];
+        const player1Collision =
+          gameData.ball.y + dy - 0.5 === gameData.player1.y &&
+          gameData.ball.x + dx >= gameData.player1.x - player1.size / 2 &&
+          gameData.ball.x + dx <= gameData.player1.x + player1.size / 2;
+        const player2Collision = gameData.ball.y + dy - 0.5 === gameData.player2.y;
+        const topCollision = gameData.ball.y + dy < -stage.h / 2;
+        const bottomCollision = gameData.ball.y + dy > stage.h / 2;
 
-  //   if (
-  //     gameData.ball.y + dy < -stage.h / 2 ||
-  //     gameData.ball.y + dy > stage.h / 2
-  //   ) {
-  //     gameData.ball.y + dy < -stage.h / 2
-  //       ? gameData.score.player1++
-  //       : gameData.score.player2++;
-  //     gameData.ball = {
-  //       x: 3,
-  //       y: 3,
-  //       z: 1,
-  //     };
-  //   }
+        if (leftCollision || rightCollision) {
+          dx *= -1;
+        }
 
-  //   gameData.ball.x += 0.5 * dx;
-  //   gameData.ball.y += 0.5 * dy;
-  //   if (gameData.score.player1 === 5 || gameData.score.player2 === 5)
-  //     clearInterval(interval)
-  // }, 10);
+        if (player1Collision || player2Collision) {
+          dy *= -1;
+        }
+
+        if (topCollision || bottomCollision) {
+          if (topCollision) {
+            gameData.score.player1++;
+          } else {
+            gameData.score.player2++;
+          }
+          gameData.ball = {
+            x: 3,
+            y: 3,
+            z: 1,
+          };
+        }
+
+        gameData.ball.x += 0.5 * dx;
+        gameData.ball.y += 0.5 * dy;
+
+        if (gameData.score.player1 === 5 || gameData.score.player2 === 5) {
+          clearInterval(interval);
+        }
+      }, 10);
+    }
+  }, [play]);
+
   return (
     <AppCtx.Provider
       value={{
         gameData,
-        movepaddle
+        movepaddle,
+        play,
+        setPlay
       }}
     >
       {children}

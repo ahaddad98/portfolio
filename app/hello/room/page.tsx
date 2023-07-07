@@ -56,7 +56,7 @@ const HomeGame: NextPage = () => {
             zIndex: 999,
             bottom: '20px',
           }}
-        // onClick={() => socket.emit("startGame")}
+          onClick={() => context.setPlay(true)}
         >
           PLAY
         </button>

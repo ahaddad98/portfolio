@@ -20,7 +20,6 @@ const HelloPage = () => {
                     {'>'} Front-end & Mobile developer
                 </div>
                 <div className="sm:text-[16px]/[25px] text-[16px]/[20px] text-mygray">
-            // you can also see it on my Github page
                 </div>
                 <div className="text-[16px]/[30px] text-myblue flex gap-2 flex-wrap cursor-pointer" onClick={() => {
                     window.open('https://github.com/ahaddad98', '_blank');
@@ -35,7 +34,7 @@ const HelloPage = () => {
                         =
                     </span>
                     <div className="cursur-pointer" style={{ color: 'rgba(233, 146, 135, 1)' }}>
-                        “https://github.com/example/url”
+                        “https://github.com/ahaddad98”
                     </div>
                 </div>
             </div>

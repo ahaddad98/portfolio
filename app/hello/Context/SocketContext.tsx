@@ -141,7 +141,6 @@ export const SocketContext = ({ children }: any) => {
             y: 3,
             z: 1,
           };
-          setData(gameData);
         }
 
         gameData.ball.x += 0.5 * dx;

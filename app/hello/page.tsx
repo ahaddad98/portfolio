@@ -38,7 +38,7 @@ const HelloPage = () => {
                     </div>
                 </div>
             </div>
-            <div className="hidden lg:block rounded-full">
+            <div className="hidden lg:block relative rounded-full">
                 <SocketContext>
                     <HomeGame />
                 </SocketContext>

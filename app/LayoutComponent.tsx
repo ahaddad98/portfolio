@@ -93,9 +93,7 @@ const LayoutComponent = ({
                 )}
                 <div className='hidden lg:flex w-full items-center justify-between tab-bordered'>
                     <div className="tabs  flex" >
-                        <div className={`tab h-[50px]  ${tabName === 'me' ? 'tab-active  tab-bordered  border-myorange' : ''} `}>amine-haddad</div>
-                        <div className="divider lg:divider-horizontal m-0"></div>
-                        <Link href={'/hello'} className={`tab h-[50px]  ${tabName === 'hello' ? 'tab-active tab-bordered border-myorange' : ''} `} onClick={() => setTabName('hello')}>_hello</Link>
+                        <Link href={'/hello'} className={`ms-3 tab h-[50px]  ${tabName === 'hello' ? 'tab-active tab-bordered border-myorange' : ''} `} onClick={() => setTabName('hello')}>_hello</Link>
                         <div className="divider lg:divider-horizontal"></div>
                         <Link href={'/aboutme'} className={`tab h-[50px]  ${tabName === 'about' ? 'tab-active tab-bordered border-myorange' : ''} `} onClick={() => setTabName('about')}>_about-me</Link>
                         <div className="divider lg:divider-horizontal"></div>
@@ -117,7 +115,7 @@ const LayoutComponent = ({
                     <div className="tabs devide-x-[2px]" >
                         <Link href={'/'} className={`tab h-[50px]  ${tabName === 'findme' ? 'tab-active tab-bordered border-myorange' : ''} `} onClick={() => setTabName('findme')}>find me in:</Link>
                         <div className="divider lg:divider-horizontal"></div>
-                        <Link href={'/'} className={`tab h-[50px]  ${tabName === 'gmail' ? 'tab-active tab-bordered border-myorange' : ''} `} onClick={() => window.open('/Amine-Haddad-Resume.pdf')}>Resume</Link>
+                        <Link href={'/'} className={`tab h-[50px]  ${tabName === 'gmail' ? 'tab-active tab-bordered border-myorange' : ''} `} onClick={() => window.open('/amine_haddad_resume.pdf')}>Resume</Link>
                         <div className="divider lg:divider-horizontal"></div>
                     </div>
                     <div className="tabs" >

@@ -26,8 +26,11 @@ body {
   padding: 20px;
   box-sizing: border-box;
   font-family: 'Fira Code', monospace;
-  overflow: hidden;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
+
+
 
 * {
   box-sizing: border-box;

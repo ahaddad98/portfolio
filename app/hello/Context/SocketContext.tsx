@@ -107,7 +107,6 @@ export const SocketContext = ({ children }: any) => {
   }
   const [play, setPlay] = useState(false)
   useEffect(() => {
-    console.log(play);
     if (play) {
       const interval = setInterval(() => {
         const leftCollision =
@@ -131,6 +130,7 @@ export const SocketContext = ({ children }: any) => {
         }
 
         if (topCollision || bottomCollision) {
+          console.log("top", topCollision)
           if (topCollision) {
             gameData.score.player1++;
           } else {
@@ -141,6 +141,7 @@ export const SocketContext = ({ children }: any) => {
             y: 3,
             z: 1,
           };
+          setData(gameData);
         }
 
         gameData.ball.x += 0.5 * dx;
@@ -158,6 +159,7 @@ export const SocketContext = ({ children }: any) => {
           clearInterval(interval);
           setPlay(false);
         }
+        console.log( gameData.score.player1);
       }, 10);
     }
   }, [play]);

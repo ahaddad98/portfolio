@@ -4,26 +4,31 @@ import type { NextPage } from "next";
 import { Canvas } from "@react-three/fiber";
 import Game from "../Components/Game";
 import { AppCtx } from "../Context/SocketContext";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { PointLightShadow } from "three";
 const HomeGame: NextPage = () => {
   const context: any = useContext(AppCtx);
+  useEffect(() => {
+    console.log("gameData", context.gameData );
+  }, [context.gameData])
   return (
     <>
-      {/* 
-      <div
-        style={{
-          color: "white",
-          position: "absolute",
-          fontWeight: "bolder",
-          backgroundColor: "transparent",
-          cursor: "pointer",
-          left: "50%",
-          zIndex: 999,
-        }}
-      >
-        {context.gameData.score.player1} - {context.gameData.score.player2}
-      </div> */}
+      {/* {
+        context.play &&
+        <div
+          style={{
+            color: "white",
+            position: "absolute",
+            fontWeight: "bolder",
+            backgroundColor: "transparent",
+            cursor: "pointer",
+            left: "50%",
+            zIndex: 999,
+          }}
+        >
+          {context.gameData.score.player1} - {context.gameData.score.player2}
+        </div>
+      } */}
       <div className='flex flex-col items-center justify-center' style={{ width: '600px', height: '600px', position: 'relative' }}>
         <Canvas
           shadows={true}
@@ -45,21 +50,23 @@ const HomeGame: NextPage = () => {
           <Game gameData={context?.gameData} movepaddle={context?.movepaddle} />
         </Canvas>
         {/* <button type="submit" className="btn btn-neutral w-full max-w-xs"></button> */}
-        <button
-          className=" btn btn-neutral w-full max-w-[150px] items-center justify-center text-center"
-          style={{
-            // color: "white",
-            position: "absolute",
-            fontWeight: "bold",
-            // backgroundColor: "transparent",
-            cursor: "pointer",
-            zIndex: 999,
-            bottom: '20px',
-          }}
-          onClick={() => context.setPlay(true)}
-        >
-          PLAY
-        </button>
+        <div className={`absolute w-full h-full bg-red backdrop-blur-md flex items-center justify-center ${context.play ? 'backdrop-blur-0' : 'backdrop-blur-md'}`}>
+          <button
+            className=" btn btn-neutral w-full max-w-[150px] items-center justify-center text-center"
+            style={{
+              // color: "white",
+              position: "absolute",
+              fontWeight: "bold",
+              // backgroundColor: "transparent",
+              cursor: "pointer",
+              zIndex: 999,
+              bottom: '20px',
+            }}
+            onClick={() => context.setPlay(true)}
+          >
+            PLAY
+          </button>
+        </div>
       </div>
     </>
   );

@@ -19,7 +19,7 @@ export function MyProvider({ children }: any) {
             linkto: 'https://github.com/ahaddad98/portfolio',
             title: 'portfolio',
             image: '/imageproj.png',
-            target: ['next']
+            target: ['next', 'threejs']
         },
         {
             linkto: 'https://github.com/ahaddad98/Mobile-Piscine',
@@ -29,7 +29,7 @@ export function MyProvider({ children }: any) {
         },
         {
             linkto: 'https://github.com/ahaddad98/matcha-backend',
-            title: 'Matcha- Dating app',
+            title: 'Matcha - Dating app',
             image: '/imageproj.png',
             target: ['react', 'express']
         },
@@ -123,6 +123,12 @@ export function MyProvider({ children }: any) {
             image: '/imageproj.png',
             target: ['c']
         },
+        {
+            linkto: 'https://github.com/mourasoft/swifty-proteins',
+            title: 'Swifyt Protiens',
+            image: '/imageproj.png',
+            target: ['reactnative', 'threejs']
+        }
     ]
     function searchProjects() {
         const foundProjects = [];

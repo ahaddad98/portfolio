@@ -8,9 +8,6 @@ import { useContext, useEffect } from "react";
 import { PointLightShadow } from "three";
 const HomeGame: NextPage = () => {
   const context: any = useContext(AppCtx);
-  useEffect(() => {
-    console.log("gameData", context.gameData );
-  }, [context.gameData])
   return (
     <>
       {/* {

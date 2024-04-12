@@ -8,6 +8,9 @@ import { useContext, useEffect } from "react";
 import { PointLightShadow } from "three";
 const HomeGame: NextPage = () => {
   const context: any = useContext(AppCtx);
+  useEffect(()=>{
+    console.log(context.play)
+  },[context.play])
   return (
     <>
       {/* {
@@ -47,7 +50,7 @@ const HomeGame: NextPage = () => {
           <Game gameData={context?.gameData} movepaddle={context?.movepaddle} />
         </Canvas>
         {/* <button type="submit" className="btn btn-neutral w-full max-w-xs"></button> */}
-        <div className={`absolute w-full h-full bg-red backdrop-blur-md flex items-center justify-center ${context?.play ? 'backdrop-blur-0' : 'backdrop-blur-md'}`}>
+        <div className={`absolute w-full h-full bg-red flex items-center justify-center ${context?.play ? 'backdrop-blur-0' : 'backdrop-blur-md'}`}>
           <button
             className=" btn btn-neutral w-full max-w-[150px] items-center justify-center text-center"
             style={{

@@ -16,11 +16,9 @@ const BioPage = () => {
     const formattedDate = date.toLocaleString('en-US', options);
     const sendEmail = (e: any) => {
         e.preventDefault();
-        console.log(e);
         emailjs.sendForm('service_8zqmdvo', 'template_jtpb7dq', formRef.current, 'vHn-08m5ljeQ21YXL')
             .then((result) => {
                 setIsSendSucces(true)
-                console.log(result.text);
             }, (error) => {
                 console.log(error.text);
             });

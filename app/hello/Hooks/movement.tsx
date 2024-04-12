@@ -21,7 +21,6 @@ export const usePersonControls = () => {
 
   useEffect(() => {
     const handleKeyDown = (e: any) => {
-      console.log(e.code);
       setMovement((m) => ({ ...m, [moveFieldByKey(e.code)]: true }));
     };
     const handleKeyUp = (e: any) => {

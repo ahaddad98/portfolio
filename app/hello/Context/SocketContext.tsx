@@ -130,7 +130,6 @@ export const SocketContext = ({ children }: any) => {
         }
 
         if (topCollision || bottomCollision) {
-          console.log("top", topCollision)
           if (topCollision) {
             gameData.score.player1++;
           } else {
@@ -155,10 +154,9 @@ export const SocketContext = ({ children }: any) => {
           //  &&
           // gameData.ball.x + dx >= gameData.player1.x - player1.size / 2 &&
           // gameData.ball.x + dx <= gameData.player1.x + player1.size / 2;
-          clearInterval(interval);
           setPlay(false);
+          clearInterval(interval);
         }
-        console.log( gameData.score.player1);
       }, 10);
     }
   }, [play]);

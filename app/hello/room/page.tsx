@@ -59,7 +59,7 @@ const HomeGame: NextPage = () => {
               zIndex: 999,
               bottom: '20px',
             }}
-            onClick={() => context.setPlay(true)}
+            onClick={() => context?.setPlay(true)}
           >
             PLAY
           </button>

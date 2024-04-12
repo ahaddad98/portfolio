@@ -24,6 +24,7 @@ const SideBar = () => {
                         <summary>Experiences</summary>
                         <ul>
                             <li className=""><Link href={'/aboutme/aba-tech'}>Aba-technology</Link></li>
+                            <li className=""><Link href={'/aboutme/itss-paris'}>ITSS Paris</Link></li>
                             {/* <li className=""><Link href={''}>+212629153914</Link></li> */}
                         </ul>
                     </details>

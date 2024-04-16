@@ -19,7 +19,7 @@ const LayoutComponent = ({
 
     return <html lang="en" data-theme={theme ? 'dark' : 'light'}>
         <body className={inter.className}>
-            <main className={`h-full flex flex-col justify-between relative ${theme ? 'bg-cardbg' : 'bg-mywhite'}`}
+            <main className={`h-full flex flex-col justify-between relative ${theme ? 'bg-cardbg' : 'bg-mywhite'} overflow-y-auto	`}
                 style={{
                     //  background: '#011627',
                     border: '1px solid #1E2D3D', borderRadius: '8px', maxHeight: 'calc(100%)'

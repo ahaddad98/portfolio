@@ -115,7 +115,7 @@ const LayoutComponent = ({
                     <div className="tabs devide-x-[2px]" >
                         <Link href={'/'} className={`tab h-[50px]  ${tabName === 'findme' ? 'tab-active tab-bordered border-myorange' : ''} `} onClick={() => setTabName('findme')}>find me in:</Link>
                         <div className="divider lg:divider-horizontal"></div>
-                        <Link href={'/'} className={`tab h-[50px]  ${tabName === 'gmail' ? 'tab-active tab-bordered border-myorange' : ''} `} onClick={() => window.open('/amine_haddad_resume')}>Resume</Link>
+                        <Link href={'/'} className={`tab h-[50px]  ${tabName === 'gmail' ? 'tab-active tab-bordered border-myorange' : ''} `} onClick={() => window.open('/haddad-amine-resume.pdf')}>Resume</Link>
                         <div className="divider lg:divider-horizontal"></div>
                     </div>
                     <div className="tabs" >

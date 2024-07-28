@@ -17,7 +17,7 @@ const HelloPage = () => {
                     Amine Haddad
                 </div>
                 <div className="sm:text-[25px]/[40px] text-[19px]/[30px] text-myblue">
-                    {'>'} Front-end & Mobile developer
+                    {'>'} Full Stack developer
                 </div>
                 <div className="sm:text-[16px]/[25px] text-[16px]/[20px] text-mygray">
                 </div>
